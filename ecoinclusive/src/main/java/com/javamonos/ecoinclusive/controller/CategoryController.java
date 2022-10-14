@@ -34,23 +34,23 @@ public class CategoryController {
 	@GetMapping(path = "{cateId}")
 	public Category getCategory(@PathVariable("cateId") Long categoria_id) {
 		return categoryServices.getCategory(categoria_id);
-	}//getCtegoria Singular
+	}//getCategoria Singular
 	
-	@DeleteMapping(path = "{cateId}") // http://localhost:8080/api/productos/1
-	public Category deleteCategory(@PathVariable("prodId") Long categoria_id){
+	@DeleteMapping(path = "{cateId}") // http://localhost:8080/api/category/1
+	public Category deleteCategory(@PathVariable("cateId") Long categoria_id){
 		return categoryServices.deleteCategory(categoria_id);
-	}//deleteProduct
+	}//deleteCategory
 	
 	@PostMapping
 	public Category addCategory (@RequestBody Category categoria) {
 		return categoryServices.addCategory(categoria);
-	}//addProducto
+	}//addCategory
 	
 	@PutMapping(path = "{cateId}")
 	public Category updateCategory (@PathVariable("cateId") Long categoria_id,
 			@RequestParam (required = false) String nombre)
 {
 		return categoryServices.updateCategory(categoria_id, nombre);
-	}//upDate
+	}//upDateCategory
 
 }//CategoryController
