@@ -1,9 +1,6 @@
 package com.javamonos.ecoinclusive.service;
-
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.javamonos.ecoinclusive.model.User;
 
 @Service
@@ -49,4 +46,17 @@ public class UserService {
 	}//else
 	return tmpUser;
 	}//if exist
+	
+	public boolean validaUsuario(String email, String password) {
+		User tmpUser = null;
+		if (userRepository.existsById(email)) {
+			tmpUser = userRepository.findById(email).get();
+			if(tmpUser.getContrasena().equals(password)) {
+			return true;}else {return false;
+			}
+		}else {
+			return false;
+		}
+	}
+	
 }

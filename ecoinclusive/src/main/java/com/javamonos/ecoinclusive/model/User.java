@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "usuario")
 public class User {
 	@Id // ID
-	@Column(name = "email", unique = true, nullable = false) //�NICO Y NO ES NULO.
+	@Column(name = "email", unique = true, nullable = false) //UNICO Y NO ES NULO.
 	private String email; //READ-ONLY
 	private String nombre;
 	private String telefono;
